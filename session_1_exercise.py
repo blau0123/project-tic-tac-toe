@@ -18,9 +18,9 @@ def input_player_letter():
     # Ask the player if they want to be 'X' or 'O'
     # Return the chosen letter
     # Hint: Use a loop to keep prompting the player for a letter if the input is not valid
-    tick = input("Choose 'X' or 'O' for da game yeet: ")
+    tick = (input("Choose 'X' or 'O' for da game yeet: ")).upper()
     while tick != 'X' and tick != 'O':
-        tick = input("Choose 'X' or 'O' for da game yeet: ")
+        tick = (input("Choose 'X' or 'O' for da game yeet: ")).upper()
 
     return tick
 
