@@ -47,6 +47,9 @@ def player_move(board):
                      (similar to the dialpad)
     Also check if the space is free. If not, prompt the player again
     Returns the integer that represents the position of the player move'''
+    move = input("Choose a space to put ur thingy");
+    while not is_space_free(board, move) or not move.isdigit() or int(move) < 1 or int(move) > 9:
+      move = input("Choose a space to put ur thingy");
 
 def make_move(board, letter, position):
     '''Input the letter onto the board at the specified position'''
