@@ -11,17 +11,24 @@ def is_winner(board, letter):
     has not won
     Hint: Detect all possibilities on how to win tic tac toe'''
     
-    if (board[7] == letter and board[8] == letter and board[9] == letter) or
-        (board[4] == letter and board[5] == letter and board[6] == letter) or
-        (board[1] == letter and board[2] == letter and board[3] == letter) or
-        (board[7] == letter and board[4] == letter and board[1] == letter) or
-        (board[8] == letter and board[5] == letter and board[2] == letter) or
-        (board[9] == letter and board[6] == letter and board[3] == letter) or
-        (board[7] == letter and board[5] == letter and board[3] == letter) or
-        (board[9] == letter and board[5] == letter and board[1] == letter):
-          return True
-      else:
-        return False
+    if (board[7] == letter and board[8] == letter and board[9] == letter):
+      return True
+    if (board[4] == letter and board[5] == letter and board[6] == letter):
+      return True
+    if (board[1] == letter and board[2] == letter and board[3] == letter):
+      return True
+    if (board[7] == letter and board[4] == letter and board[1] == letter):
+      return True
+    if (board[8] == letter and board[5] == letter and board[2] == letter):
+      return True
+    if (board[9] == letter and board[6] == letter and board[3] == letter):
+      return True
+    if (board[7] == letter and board[5] == letter and board[3] == letter):
+      return True
+    if (board[9] == letter and board[5] == letter and board[1] == letter):
+      return True
+    else:
+      return False
 
 
 def is_space_free(board, position):
@@ -43,16 +50,30 @@ def player_move(board):
 
 def make_move(board, letter, position):
     '''Input the letter onto the board at the specified position'''
+    if board[position] == ' ':
+      board[position] == letter
 
 
 def is_board_full(board):
     '''We need to check is the board is full to declare a tie
     Hint: you can call other functions in this function'''
+    for x in range(1, len(board)):
+      if is_space_free(board, x):
+        return False
+    return True
 
 
 def play_again():
     '''Ask the player if they want to play again
     Return True is yes, False if no'''
+    playagain = input("Do you want to play again?").lower()
+    while playagain != 'yes' or playagain != 'no':
+      playagain = input("Do you want to play again?").lower()
+      
+    if playagain == 'yes':
+      return True
+    elif playagain == 'no':
+      return False
 
 
 # --------------Session 1---------------%
@@ -130,8 +151,6 @@ def main():
 
             # when the game ends (game_on = False), ask if the player will want to play again
             # break if they do not want to play again
-
-
 
 
 main()
