@@ -124,11 +124,16 @@ def who_goes_first():
 
 def main():
     print('Welcome to Tic Tac Toe')  # print beginning message
-
+    # testing
+    test_board = ['', 'X', 'O', 'X',
+                  'O', 'O', 'X',
+                  'X', 'X', 'O']
+    print(is_winner(test_board, 'X'))
+    print(is_board_full(test_board))
     # now we will use all of our helper functions to create the workflow of the game
     while True:
         # Reset the board, run the setup functions
-
+        '''
         # indicate who will go first
         turn = who_goes_first()
         print('The ' + turn + ' will go first')
@@ -139,9 +144,9 @@ def main():
             computer_letter = 'O'
         else:
             computer_letter = 'X'
-        game_on = True
-
-        while (game_on):
+        game_on = True'''
+        
+        # while (game_on):
 
             # check if player of computer is the starter, then make their move and check for win or tie
 
@@ -154,6 +159,6 @@ def main():
 
             # when the game ends (game_on = False), ask if the player will want to play again
             # break if they do not want to play again
-
+          
 
 main()
