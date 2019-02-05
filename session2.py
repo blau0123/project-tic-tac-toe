@@ -11,10 +11,25 @@ def is_winner(board, letter):
     has not won
     Hint: Detect all possibilities on how to win tic tac toe'''
     
+    if (board[7] == letter and board[8] == letter and board[9] == letter) or
+        (board[4] == letter and board[5] == letter and board[6] == letter) or
+        (board[1] == letter and board[2] == letter and board[3] == letter) or
+        (board[7] == letter and board[4] == letter and board[1] == letter) or
+        (board[8] == letter and board[5] == letter and board[2] == letter) or
+        (board[9] == letter and board[6] == letter and board[3] == letter) or
+        (board[7] == letter and board[5] == letter and board[3] == letter) or
+        (board[9] == letter and board[5] == letter and board[1] == letter):
+          return True
+      else:
+        return False
 
 
 def is_space_free(board, position):
     '''Return True if the space is free, false if it isn't'''
+    if board[position] != ' ':
+      return False
+    else:
+      return True
 
 
 def player_move(board):
